@@ -1,6 +1,12 @@
 ---
+# tasks file for ansible-role-nginx/
 - name: install nginx
-  apt: name=nginx state=present
+  apt:
+    name:   nginx
+    state:  latest
 
-- name: nginx server status
-  service: name=nginx state=started enabled=yes
+- name: nginx service state
+  service:
+    name:     nginx
+    state:    started
+    enabled:  yes
